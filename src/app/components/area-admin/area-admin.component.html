@@ -1,0 +1,75 @@
+
+<div class="marsu container-fluid col-sm-12 col-md-10 ">
+  <div class="usuario container-fluid bg-black col-md-8 col-sm-12 m-t-10 ">
+  <h1 class="orange">Servicios Administrador</h1>
+  <h1 class="orange">{{mensaje}}</h1>
+  <div id="citas" class="listado">
+<table class="orange muestra">
+  <tr>
+  <th>Dia</th>
+  <th>Hora</th>
+  <th>Usuario</th>
+  <th>accion</th>
+</tr>
+  @for (cita of recogido; track cita._id) {
+<tr>
+
+  <td><a  (click)="citasDia(cita.dia)"> {{cita.dia}} </a></td><td> {{cita.hora}} </td><td>  {{cita.nombre}} </td> <td class="eliminar" (click)="eliminaCita(cita._id)">X</td>
+
+</tr>
+  }
+  </table>
+
+  </div>
+
+  <div id="usuarios" class="listado">
+    <table class="orange muestra" >
+  <tr>
+  <th>Email</th>
+  <th>Nombre</th>
+  <th>Apellidos</th>
+  <th>accion</th>
+</tr>
+  @for (usuario of recogido; track usuario._id){
+<tr>
+
+  <td> {{usuario.email}} </td><td> {{usuario.name}} </td><td>  {{usuario.lastName}} </td> <td class="eliminar" (click)="eliminaUsuario(usuario._id)">X</td>
+
+</tr>
+  }
+  </table>
+  </div>
+<button type="button" class="boton" (click)="citasPendientes()">Citas pendientes</button>
+<button type="button" class="boton" routerLink="/citasAdmin">Introducir cita</button><br>
+
+<button type="button" class="boton" routerLink="/usuario">Alta usuarios</button>
+<button type="button" class="boton" (click)="listado()">Lista de usuarios</button>
+
+
+<button type="button" class="boton" routerLink="/modpass">Cambiar contraseña</button>
+
+
+
+<div>
+<button type="button" class="boton" (click)="salir()">Salir</button>
+
+
+</div>
+
+</div>
+</div>
+<!-- The Modal -->
+ <div class="container-fluid col-md-3">
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <h1>{{mensajeModal}}</h1>
+    <button id="ok" class="boton verde" >Aceptar</button>
+    <br>
+    <button class="botonModal rojo" id="cancela" (click)="cerrarModal()">cancelar</button>
+  </div>
+
+</div>
+
+</div>

@@ -1,0 +1,165 @@
+
+    #calendario{
+      border-radius: 5px;
+      box-sizing: border-box;
+      padding: 15px;
+      width: 360px;
+		display: inline-block;
+		vertical-align: top;
+    }
+	 #formulario
+	  {
+		  display: inline-block;
+		  vertical-align: top;
+	  }
+    header {
+      overflow: clear;
+      position: relative;
+    }
+    h2 {
+      font-family: 'PT Sans Narrow', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      margin: 0 0 10px;
+      text-align: center;
+    }
+    h1 {
+      font-family: 'PT Sans Narrow', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      margin: 0 0 10px;
+      text-align: center;
+    }
+    button {
+      position: absolute;
+      top: -4px;
+    }
+    button:first-child {
+      left: 0;
+    }
+    button:last-child {
+      right: 0;
+    }
+    table {
+      background: #fff;
+      opacity: 97%;
+      border: solid black 1px;
+      border-collapse: collapse;
+      color: #222;
+      font-family: 'PT Sans', sans-serif;
+      font-size: 13px;
+      width: 100%;
+    }
+    th {
+      padding: 5px;
+    color: #444444;
+    line-height: 12px;
+    text-align: left;
+    font-size: 2vh;
+  }
+    td {
+        border: solid 1px grey;
+      color: #444444;
+      line-height: 72px;
+      text-align: center;
+      font-size: 3vh;
+    }
+    td:hover{
+        background-color: bisque;
+    }
+
+    .capa{
+        width: 100%;
+    }
+    .meses{
+        text-align: center;
+        font-size: 4vh;
+        font-weight: bold;
+    }
+    .mes{
+        padding: 10px;
+        padding-left: 0%;
+        padding-right: 0%;
+        background-image: url('../../../assets/img/logoredondo.jpg');
+        background-repeat:round;
+        border-radius: 15px;
+        width: 96%;
+        margin-left: 2%;
+        margin-right: 2%;
+        border:solid black 2px;
+
+    }
+    .hoy{
+      font-size:40px;
+      font-weight: bold;
+    }
+    .findes{
+      background-color: beige;
+      color:rgb(165, 63, 63);
+      font-weight: bold;
+    }
+.lista{
+  text-align: left;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+  .lista td{
+    border: none;
+    border-bottom:solid 3px #9c9a9a;
+    text-align: left;
+    font-size: 16px;
+    line-height:22px;
+    padding-left: 5px;
+     }
+     .lista td:hover{
+      background-color:white;
+     }
+  .lista table{
+    font-size: 9px;
+    margin-left: 50px;
+
+  }
+  .citas{
+    padding: 10px;
+    padding-right: 0px;
+    padding-left: 0%;
+border-radius: 15px;
+margin-left: 2%;
+margin-right: 2%;
+    width: 96%;
+    border: 1px solid grey;
+
+}
+.logotipo{
+  object-fit:cover;
+  width: 5%;
+  text-align: center;
+}
+.blanco{
+  color: white;
+  background-color: black;
+
+  opacity: 90%;
+}
+.cita{
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  display: block;
+  padding: 3%;
+  border:solid 4px rgb(110, 110, 110);
+  border-radius: 15PX;
+  width: 90%;
+}
+.salir{
+  position: relative;
+  display: block;
+  margin-top: 5px;
+  text-align: center;
+      font-weight: bolder;
+
+
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      text-decoration: none;
+      background-color: green;
+      color: white;
+      padding:20px;
+      border-radius: 5px;
+  }

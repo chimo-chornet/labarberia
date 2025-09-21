@@ -1,0 +1,531 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>My app documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">My app documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  AcordeonComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/acordeon/acordeon.component.ts</code>
+</p>
+
+
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-acordeon</code></td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                                <code><a href="../components/CarruselComponent.html" target="_self" >CarruselComponent</a></code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./acordeon.component.html</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrl</td>
+                <td class="col-md-9"><code>./acordeon.component.css</code></td>
+            </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#goLogin" >goLogin</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(router: Router, scriptLoaderService: <a href="../injectables/ScriptLoaderService.html" target="_self">ScriptLoaderService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/components/acordeon/acordeon.component.ts:12</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>scriptLoaderService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ScriptLoaderService.html" target="_self" >ScriptLoaderService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="goLogin"></a>
+                    <span class="name">
+                        <span ><b>goLogin</b></span>
+                        <a href="#goLogin"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>goLogin()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="15"
+                                    class="link-to-prism">src/app/components/acordeon/acordeon.component.ts:15</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+import { CarruselComponent } from &quot;../carrusel/carrusel.component&quot;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { ScriptLoaderService } from &#x27;../../services/scriptloader.service&#x27;;
+
+@Component({
+    selector: &#x27;app-acordeon&#x27;,
+    imports: [CarruselComponent],
+    templateUrl: &#x27;./acordeon.component.html&#x27;,
+    styleUrl: &#x27;./acordeon.component.css&#x27;
+})
+export class AcordeonComponent {
+  constructor(private router:Router, private scriptLoaderService:ScriptLoaderService){};
+
+  goLogin(){
+this.router.navigate([&#x27;/login&#x27;]);
+  }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">
+
+
+  &lt;div class&#x3D;&quot;container-fluid accordion text-center col-md-12 col-ms-12&quot; id&#x3D;&quot;accordionExample&quot;&gt;
+    &lt;div class&#x3D;&quot;row&quot;&gt;
+      &lt;div class&#x3D;&quot;accordion-item transparent col-md-12 col-12&quot;&gt;
+        &lt;h2 class&#x3D;&quot;accordion-header&quot; id&#x3D;&quot;headingOne&quot;&gt;
+          &lt;button class&#x3D;&quot;btn btn-dark btn-outline-warning bg-negro col-md-6 col-12 collapsed&quot; type&#x3D;&quot;button&quot; data-bs-toggle&#x3D;&quot;collapse&quot; data-bs-target&#x3D;&quot;#collapseOne&quot; aria-expanded&#x3D;&quot;false&quot; aria-controls&#x3D;&quot;collapseOne&quot;&gt;
+            &lt;h5&gt;Horarios&lt;/h5&gt;
+          &lt;/button&gt;
+        &lt;/h2&gt;
+        &lt;div id&#x3D;&quot;collapseOne&quot; class&#x3D;&quot;btn bg-oscuro fluid accordion-collapse collapse&quot; aria-labelledby&#x3D;&quot;headingOne&quot; data-bs-parent&#x3D;&quot;#accordionExample&quot;&gt;
+            &lt;div class&#x3D;&quot;row col-12&quot;&gt;
+             &lt;div class&#x3D;&quot;accordion-body bg-oscuro fluid col-md-12 col-ms-8 mt-2 collapsed&quot;&gt;
+                Los horarios de esta barbería son de lo más variopinto.&lt;br&gt;A saber:&lt;br&gt; de lunes a viernes abre a las 10 de la mañana, si no ha tenido ningún contratiempo que lo retrase.&lt;br&gt; Algunos viernes por la tarde no está.&lt;br&gt; Los fines de semana, por supuesto, está cerrado.&lt;br&gt; Si hay puente, festivo cercano futuro o pasado, igual también está cerrado.&lt;br&gt;
+              &lt;/div&gt;
+              &lt;div class&#x3D;&quot;container-fluid btn bg-oscuro col-md-9&quot;&gt;&lt;img class&#x3D;&quot;img-fluid col-md-12&quot; src&#x3D;&quot;../assets/images/peluk.png&quot; alt&#x3D;&quot;Capas del sol&quot;&gt; &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;accordion-item transparent col-12&quot;&gt;
+        &lt;h2 class&#x3D;&quot;accordion-header&quot; id&#x3D;&quot;headingTwo&quot;&gt;
+          &lt;button class&#x3D;&quot;btn btn-dark btn-outline-warning bg-negro col-md-6 col-12 collapsed&quot; type&#x3D;&quot;button&quot; data-bs-toggle&#x3D;&quot;collapse&quot; data-bs-target&#x3D;&quot;#collapseTwo&quot; aria-expanded&#x3D;&quot;false&quot; aria-controls&#x3D;&quot;collapseTwo&quot;&gt;
+           &lt;h5&gt;Fotografías&lt;/h5&gt;
+          &lt;/button&gt;
+        &lt;/h2&gt;
+        &lt;div  id&#x3D;&quot;collapseTwo&quot; class&#x3D;&quot;container-fluid accordion-collapse btn-dark collapse&quot; aria-labelledby&#x3D;&quot;headingTwo&quot; data-bs-parent&#x3D;&quot;#accordionExample&quot;&gt;
+          &lt;div class&#x3D;&quot;row col-12 &quot;&gt;
+
+            &lt;app-carrusel&gt;&lt;/app-carrusel&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;accordion-item transparent col-12 col-md-12 &quot;&gt;
+        &lt;h2 class&#x3D;&quot;accordion-header&quot; id&#x3D;&quot;headingThree&quot;&gt;
+          &lt;button class&#x3D;&quot;btn btn-dark btn-outline-warning bg-negro col-md-6 col-12 collapsed&quot; type&#x3D;&quot;button&quot; data-bs-toggle&#x3D;&quot;collapse&quot; data-bs-target&#x3D;&quot;#collapseThree&quot; aria-expanded&#x3D;&quot;false&quot; aria-controls&#x3D;&quot;collapseThree&quot;&gt;
+          &lt;h5&gt;Productos y ofertas&lt;/h5&gt;
+          &lt;/button&gt;
+        &lt;/h2&gt;
+        &lt;div id&#x3D;&quot;collapseThree&quot; class&#x3D;&quot;btn bg-oscuro collapse&quot; aria-labelledby&#x3D;&quot;headingThree&quot; data-bs-parent&#x3D;&quot;#accordionExample&quot;&gt;
+
+            &lt;div class&#x3D;&quot;row col-12&quot;&gt;
+            &lt;div class&#x3D;&quot;accordion-body bg-oscuro col-md-12 col-ms-12 mt-2&quot;&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum quae adipisci fugiat, exercitationem deserunt, debitis laborum earum temporibus nulla quisquam quis saepe rerum laboriosam magnam sit ipsam a, repellendus aspernatur.&lt;/div&gt;
+            &lt;div class&#x3D;&quot;container-fluid col-12 col-md-6&quot;&gt;&lt;img class&#x3D;&quot;img-fluid col-md-12 col-ms-4&quot; src&#x3D;&quot;../assets/images/skullbarber.png&quot; alt&#x3D;&quot;Ojo al barbero&quot;&gt; &lt;/div&gt;
+            &lt;div class&#x3D;&quot;accordion-body bg-oscuro col-ms-12 col-md-12 mt-2&quot;&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod alias, velit quaerat earum at eligendi sapiente architecto cum perferendis iusto cupiditate, reiciendis culpa facilis consequatur natus sit corporis, iste ad. &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;accordion-item transparent col-12 &quot;&gt;
+          &lt;h2 class&#x3D;&quot;accordion-header&quot; id&#x3D;&quot;headingfour&quot;&gt;
+            &lt;button (click)&#x3D;&quot;goLogin()&quot; class&#x3D;&quot;btn btn-dark btn-outline-warning bg-negro col-md-6 col-12 collapsed &quot; type&#x3D;&quot;button&quot; data-bs-toggle&#x3D;&quot;collapse&quot; data-bs-target&#x3D;&quot;#collapsefour&quot; aria-expanded&#x3D;&quot;false&quot; aria-controls&#x3D;&quot;collapsefour&quot;&gt;
+            &lt;h5&gt;Area de Usuarios&lt;/h5&gt;
+            &lt;/button&gt;
+          &lt;/h2&gt;
+          &lt;/div&gt;
+
+      &lt;/div&gt;
+
+
+
+
+
+      &lt;/div&gt;
+      &lt;/div&gt;
+</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div>  <div class="container-fluid accordion text-center col-md-12 col-ms-12" id="accordionExample">    <div class="row">      <div class="accordion-item transparent col-md-12 col-12">        <h2 class="accordion-header" id="headingOne">          <button class="btn btn-dark btn-outline-warning bg-negro col-md-6 col-12 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">            <h5>Horarios</h5>          </button>        </h2>        <div id="collapseOne" class="btn bg-oscuro fluid accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">            <div class="row col-12">             <div class="accordion-body bg-oscuro fluid col-md-12 col-ms-8 mt-2 collapsed">                Los horarios de esta barbería son de lo más variopinto.<br>A saber:<br> de lunes a viernes abre a las 10 de la mañana, si no ha tenido ningún contratiempo que lo retrase.<br> Algunos viernes por la tarde no está.<br> Los fines de semana, por supuesto, está cerrado.<br> Si hay puente, festivo cercano futuro o pasado, igual también está cerrado.<br>              </div>              <div class="container-fluid btn bg-oscuro col-md-9"><img class="img-fluid col-md-12" src="../assets/images/peluk.png" alt="Capas del sol"> </div>            </div>        </div>      </div>      <div class="accordion-item transparent col-12">        <h2 class="accordion-header" id="headingTwo">          <button class="btn btn-dark btn-outline-warning bg-negro col-md-6 col-12 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">           <h5>Fotografías</h5>          </button>        </h2>        <div  id="collapseTwo" class="container-fluid accordion-collapse btn-dark collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">          <div class="row col-12 ">            <app-carrusel></app-carrusel>          </div>        </div>      <div class="accordion-item transparent col-12 col-md-12 ">        <h2 class="accordion-header" id="headingThree">          <button class="btn btn-dark btn-outline-warning bg-negro col-md-6 col-12 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">          <h5>Productos y ofertas</h5>          </button>        </h2>        <div id="collapseThree" class="btn bg-oscuro collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">            <div class="row col-12">            <div class="accordion-body bg-oscuro col-md-12 col-ms-12 mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum quae adipisci fugiat, exercitationem deserunt, debitis laborum earum temporibus nulla quisquam quis saepe rerum laboriosam magnam sit ipsam a, repellendus aspernatur.</div>            <div class="container-fluid col-12 col-md-6"><img class="img-fluid col-md-12 col-ms-4" src="../assets/images/skullbarber.png" alt="Ojo al barbero"> </div>            <div class="accordion-body bg-oscuro col-ms-12 col-md-12 mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod alias, velit quaerat earum at eligendi sapiente architecto cum perferendis iusto cupiditate, reiciendis culpa facilis consequatur natus sit corporis, iste ad. </div>          </div>          </div>        </div>        <div class="accordion-item transparent col-12 ">          <h2 class="accordion-header" id="headingfour">            <button (click)="goLogin()" class="btn btn-dark btn-outline-warning bg-negro col-md-6 col-12 collapsed " type="button" data-bs-toggle="collapse" data-bs-target="#collapsefour" aria-expanded="false" aria-controls="collapsefour">            <h5>Area de Usuarios</h5>            </button>          </h2>          </div>      </div>      </div>      </div></div>'
+    var COMPONENTS = [{'name': 'AcordeonComponent', 'selector': 'app-acordeon'},{'name': 'App', 'selector': 'app-root'},{'name': 'AreaAdminComponent', 'selector': 'app-area-admin'},{'name': 'AreaUsuarioComponent', 'selector': 'app-area-usuario'},{'name': 'CabeceraComponent', 'selector': 'app-cabecera'},{'name': 'CalAdmin', 'selector': 'app-cal-admin'},{'name': 'CalComponent', 'selector': 'app-cal'},{'name': 'CalUsuarioComponent', 'selector': 'app-cal-usuario'},{'name': 'CarruselComponent', 'selector': 'app-carrusel'},{'name': 'CitaAdmin', 'selector': 'app-cita-admin'},{'name': 'CitaDia', 'selector': 'app-cita-dia'},{'name': 'CitasAdminComponent', 'selector': 'app-citas-admin'},{'name': 'CitasComponent', 'selector': 'app-citas'},{'name': 'CitaUsuarioComponent', 'selector': 'app-cita-usuario'},{'name': 'Emergente', 'selector': 'app-emergente'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'Login', 'selector': 'app-login'},{'name': 'ModpassComponent', 'selector': 'app-modpass'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'Pruebas', 'selector': 'app-pruebas'},{'name': 'UsuarioComponent', 'selector': 'app-usuario'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'AcordeonComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'AcordeonComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

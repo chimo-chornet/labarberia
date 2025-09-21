@@ -1,0 +1,21 @@
+<p>cita-dia works!</p>
+
+<div class="marsu container-fluid col-sm-12 col-md-8 ">
+  <div class="usuario container-fluid bg-black col-md-8 col-sm-12 m-t-10 ">
+  <h1 class="orange">Citas del día</h1>
+  <h1 class="orange">{{mensaje}}</h1>
+
+  @for (cita of recogido; track cita.id) {
+<div class="orange muestra">
+  <p (click)="editar(cita.id)" style="visibility: hidden;">{{cita.id}}</p>
+  <h2>Dia: {{cita.dia}} Hora: {{cita.hora}}<button type="button" class="boton eliminar" (click)="elimina(cita.id)">Eliminar cita</button></h2>
+
+</div>
+  }
+
+<div>
+<button type="button" class="boton" (click)="salir()">Salir</button>
+</div>
+
+</div>
+</div>

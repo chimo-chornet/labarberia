@@ -1,0 +1,84 @@
+
+
+.resp{
+    font-size: 2vw;
+  }
+  .card{
+    border:solid 1px orange;
+    box-shadow: 5px 5px 15px #b85c00;
+    padding: 0%;
+  }
+  body{
+    background-color: black;
+  }
+  .fondo {
+    background-color: black;
+            background-size:cover;
+            background-attachment:fixed;
+    background-image: url("../../../assets/img/fachada.jpg");
+
+        }
+  .video {
+          position: fixed;
+          top: 50%; left: 50%;
+          opacity: 60%;
+          z-index: 0;
+          min-width: 100%;
+          min-height: 100%;
+          width: auto;
+          height: auto;
+          transform: translate(-50%, -50%);
+}
+  .bn{
+border: none;
+
+  }
+
+  .bg-gris{
+    background-color:rgb(215, 213, 213) ;
+  }
+  .bg-negro{
+    background-color: black;
+    opacity: 90%;
+    color:white;
+  }
+  .bg-oscuro{
+    text-align: left;
+    background-color: black;
+    opacity: 85%;
+    color:white;
+  }
+  .bg-white{
+    background-color: white;
+  }
+  .zfondo{
+    z-index: 0;
+
+    background-image: url("../../../assets/img/fachada.jpg");
+    background-color: black;
+
+  }
+  .titulo{
+display: flex;
+    background-color: black;
+    background-image: url("../../../assets/img/ladrillos.jpg");
+    background-size: 51%;
+    text-shadow: 8px 8px black;
+    color: gold;
+    line-height: 130%;
+    font-family:serif;
+    font-weight:bolder;
+    font-size:6vw;
+    margin-bottom: 2%;
+    opacity: 85%;
+   padding: 5%;
+   padding-top: 1%;
+   padding-bottom: 1%;
+    border-radius: 5px;
+  }
+
+  .transparente{
+    border: none;
+    color: none;
+    background-color: transparent;
+  }

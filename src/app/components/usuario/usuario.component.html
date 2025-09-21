@@ -1,0 +1,43 @@
+
+
+
+<div class="general">
+
+
+  <div class="container col-md-3 col-sm-12">
+    <h1>Usuario</h1>
+    <div action="">
+      <div>
+        <input type="text" [(ngModel)]="nombre" id="nombre" placeholder="Nombre">
+      </div>
+      <div>
+        <input type="text" [(ngModel)]="apellidos" id="apellidos" placeholder="Apellidos">
+      </div>
+      <div>
+        <input type="text" [(ngModel)]="credenciales" id="credenciales" placeholder="Credenciales">
+      </div>
+      <div>
+        <input type="email" [(ngModel)]="mail" id="mail" placeholder="E-mail">
+      </div>
+      <div>
+        <input type="password" [(ngModel)]="password" id="pass" placeholder="password">
+
+      </div>
+      <div>
+        <button type="button" (click)="crear()" id="enviar">
+        Enviar datos: </button>
+        </div>
+      </div>
+<div>
+<button type="button"  (click)="salir()" style="background-color: brown;">Salir</button>
+</div>
+
+      <div>
+        <h1 class="error">{{tipo}}</h1>
+        <h2>{{msg}}</h2>
+      </div>
+      <div>
+      </div>
+    </div>
+
+  </div>

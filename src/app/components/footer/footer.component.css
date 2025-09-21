@@ -1,0 +1,10 @@
+ .pie{
+    text-align: center;
+    position:fixed;
+    background-color: black;
+    opacity: 80%;
+    color: rgb(182, 165, 145);
+  bottom: 0px;
+  width: 100%;
+  height: 1.5rem;
+    }

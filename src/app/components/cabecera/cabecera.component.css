@@ -1,0 +1,31 @@
+.pole{
+position: relative;
+display: inline-flex;
+    background-color: white;
+    z-index: 5;
+    opacity: 80%;
+      height: 2lh;
+    }
+  .pole:hover{
+    opacity: 100%;
+  }
+  .polederecha{
+    display:inline-flex;
+    position: relative;
+    background-color: black;
+    opacity: 80%;
+    height:2lh;
+  }
+  .polederecha:hover{
+    opacity: 100%;
+  }
+  .fachada{
+    display: inline-flex;
+      height: 2lh;
+    }
+    .nombre{
+      text-align: center;
+      border:none;
+
+      width: 90%;
+    }

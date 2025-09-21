@@ -1,0 +1,12 @@
+.btn{
+    position: relative;
+    margin-top: 1%;
+}
+.transparent{
+    background-color: transparent;
+    border: none;
+}
+.bg-oscuro{
+    background-color: black;
+    color: wheat;
+}

@@ -1,0 +1,47 @@
+<div class="container fluid col-md-8 bg-white cita">
+  <h1>Dia</h1>
+  <h1>{{day}}-{{month}}-{{year}}</h1>
+  <hr>
+  <div class="horas container-fluid text-center">
+    <h2>Horario de mañana</h2>
+    <a id="10:00" (click)="asignaHora('10:00')">10:00</a>
+    <a id="10:30" (click)="asignaHora('10:30')">10:30</a>
+    <a id="11:00" (click)="asignaHora('11:00')">11:00</a>
+    <a id="11:30" (click)="asignaHora('11:30')">11:30-</a>
+    <a id="12:00" (click)="asignaHora('12:00')">12:00</a>
+    <a id="12:30" (click)="asignaHora('12:30')">12:30</a>
+    <a id="13:00" (click)="asignaHora('13:00')">13:00</a>
+    <a id="13:30" (click)="asignaHora('13:30')">13:30</a>
+  </div>
+  <hr>
+  <div class="horas">
+    <h2>Horario de tarde</h2>
+    <a id="17:00" (click)="asignaHora('17:00')">17:00</a>
+    <a id="17:30" (click)="asignaHora('17:30')">17:30</a>
+    <a id="18:00" (click)="asignaHora('18:00')">18:00-</a>
+    <a id="18:30" (click)="asignaHora('18:30')">18:30</a>
+    <a id="19:00" (click)="asignaHora('19:00')">19:00</a>
+    <a id="19:30" (click)="asignaHora('19:30')">19:30</a>
+  </div>
+  <hr>
+
+  <div class="container-fluid text-center">
+    <button class="boton col-md-6 " (click)="salir()">Volver</button>
+  </div>
+</div>
+  <div class="container-fluid col-md-3">
+
+  <!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <h1>{{mensaje}}</h1>
+    <button id="ok" class="boton verde" >Aceptar</button>
+    <br>
+    <button class="boton rojo" id="cancela" (click)="cerrarModal()">cancelar</button>
+  </div>
+</div>
+</div>
+
+

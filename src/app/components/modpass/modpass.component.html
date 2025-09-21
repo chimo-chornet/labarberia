@@ -1,0 +1,38 @@
+
+
+
+<div class="general">
+
+
+  <div class="container col-md-3 col-sm-12">
+    <h1>Cambio de contraseña</h1>
+    <h1>{{mail}}</h1>
+    <div action="">
+
+      <div>
+        <input type="password" [(ngModel)]="passact" id="passAct"  placeholder="password actual">
+      </div>
+      <div>
+        <input type="password" [(ngModel)]="passnew" id="passNew"  placeholder="password nuevo">
+      </div>
+      <div>
+        <input type="password" [(ngModel)]="passrep" id="passrep"  placeholder="repita password">
+      </div>
+      <div>
+        <button type="button" (click)="cambiar()" id="enviar">
+        Enviar datos: </button>
+    </div>
+<div>
+<button type="button"  (click)="salir()" style="background-color: brown;">Salir</button>
+</div>
+
+      <div>
+        <h1 class="error">{{tipo}}</h1>
+        <h2>{{msg}}</h2>
+      </div>
+      <div>
+      </div>
+    </div>
+
+  </div>
+</div>

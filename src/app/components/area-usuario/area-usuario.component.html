@@ -1,0 +1,37 @@
+
+<div class="marsu container-fluid col-sm-12 col-md-8 ">
+  <div class="usuario container-fluid bg-black col-md-8 col-sm-12 m-t-10 ">
+  <h1 class="orange">Servicios usuario</h1>
+  <h1 class="orange">{{mensaje}}</h1>
+
+  @for (cita of recogido; track cita._id) {
+<div class="orange muestra">
+  <p (click)="editar(cita._id)" style="visibility: hidden;">{{cita._id}}</p>
+  <h2>Dia: {{cita.dia}} Hora: {{cita.hora}}<button type="button" class="boton eliminar" (click)="elimina(cita._id)">Eliminar cita</button></h2>
+
+</div>
+  }
+<button type="button" class="boton" routerLink="/citas">Pedir cita</button><br>
+<button type="button" class="boton" routerLink="/modpass">Cambiar contraseña</button>
+
+<div>
+<button type="button" class="boton" (click)="salir()">Salir</button>
+</div>
+
+</div>
+</div>
+<!-- The Modal -->
+ <div class="container-fluid col-md-3">
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <h1>{{mensajeModal}}</h1>
+    <button id="ok" class="boton verde" >Aceptar</button>
+    <br>
+    <button class="botonModal rojo" id="cancela" (click)="cerrarModal()">cancelar</button>
+  </div>
+
+</div>
+
+</div>
