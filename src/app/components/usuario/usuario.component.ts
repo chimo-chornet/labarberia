@@ -14,6 +14,7 @@ import { HttpErrorResponse } from '@angular/common/http';
     styleUrl: './usuario.component.css'
 })
 export class UsuarioComponent {
+
   nombre:string='';
   apellidos:string='';
   credenciales:number=123;
@@ -24,7 +25,17 @@ export class UsuarioComponent {
   msg: string = '';
   errores: string = '';
   idUsuario:number=0;
-  constructor(private router:Router,private conn:Peticiones){}
+    token:any='';
+  constructor(private router:Router,private conn:Peticiones){
+    this.token=localStorage.getItem('token');
+  }
+
+  ngOnInit(){
+    if(this.token==null){
+  this.router.navigate(['/login']);
+}
+  }
+
 textValidate(cadena:string){
     var re = /^[A-Za-z Ññ áéíóúÁÉÍÓÚ]+$/;
     if(re.test(cadena))

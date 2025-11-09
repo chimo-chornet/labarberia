@@ -10,3 +10,37 @@
     background-color: black;
     color: wheat;
 }
+.lista{
+    font-size: 150%;
+    margin-left:auto;
+}
+.centrado{
+    justify-content: center;
+    border-radius: 5px;
+    margin-left: 25px;
+
+}
+.ancho200{
+    max-width: 200px;
+}
+.animado{
+    margin-top: 20px;
+border-radius: 100%;
+border:solid white 10px;
+border-style:double;
+    animation-name: myAnimation;
+    animation-duration:8s;
+    animation-timing-function: linear;
+animation-iteration-count: 1;
+}
+.opacidadmenos{
+    opacity: 95%;
+}
+@keyframes myAnimation {
+  0%  {transform: scale(250%);}
+
+  20%  {transform: rotate(-360deg);}
+
+
+
+}

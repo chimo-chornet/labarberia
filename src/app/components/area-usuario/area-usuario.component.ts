@@ -17,7 +17,7 @@ export class AreaUsuarioComponent {
 
   token:any='';
 
-  constructor(private router:Router,private dat:DataService,private conn:Peticiones){};
+  constructor(private router:Router,private conn:Peticiones){};
 ngOnInit(){
   this.token=localStorage.getItem('token');
   this.idUsuario=localStorage.getItem('userId');
@@ -77,7 +77,6 @@ this.mensajeModal='Eliminar cita';
 
     });
  this.cerrarModal();
-      this.router.navigate(['/usuarios']);
   }
 
 
@@ -98,6 +97,7 @@ modal() {
 cerrarModal() {let modal:any = document.getElementById("myModal");
 
   modal.style.display="none";
+
 }
 
 

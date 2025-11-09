@@ -11,29 +11,31 @@ import { FormsModule } from '@angular/forms';
     styleUrl: './cita-admin.css'
 })
 export class CitaAdmin implements OnInit {
-  year: number = 0;
-  month: number = 0;
-  day: number = 0;
-  urlTree: UrlTree;
+  year= localStorage.getItem('year');
+  month= localStorage.getItem('mes');
+  day=localStorage.getItem('dia');
+ // urlTree: UrlTree;
   respuesta: any = [];
   token:any='';
   dia:string='';
-  color:string='';
-  cliente:string='';
+  color:string=''+localStorage.getItem('color');
+  cliente:string='De paso';
   mensaje:string='';
   mensajeModal:string='';
+  //color=localStorage.getItem('color')
 
 
 
   frase: any = '';
   constructor(private router: Router, private conn: Peticiones) {
 
-    this.urlTree = this.router.parseUrl(this.router.url);
+    /*this.urlTree = this.router.parseUrl(this.router.url);
     this.year = this.urlTree.queryParams['year'];
     this.month = this.urlTree.queryParams['month'];
     this.color = this.urlTree.queryParams['color'];
 
     this.day = this.urlTree.queryParams['day'];
+    */
     if(localStorage.getItem('token')!=null){
       this.token=localStorage.getItem('token');
   };
@@ -75,6 +77,8 @@ this.respuesta.forEach((element:any) => {
     let comienzo=document.getElementById('comienzo')
     if(comienzo!=null){
     comienzo.style.color='red';
+    localStorage.setItem('num','');
+
     }
 
   }
@@ -87,12 +91,13 @@ this.respuesta.forEach((element:any) => {
     let comienzo=document.getElementById('comienzo')
     if(comienzo!=null){
     comienzo.style.color='black';
+    localStorage.setItem('color','black');
+    localStorage.setItem('num','');
     }
   }
 
   //Al salir redirigimos al calendario de administración
   salir() {
-
 
     this.router.navigate(['/citasAdmin']);
   }
@@ -102,7 +107,7 @@ this.respuesta.forEach((element:any) => {
  //Se selecciona la hora de la cita, se marca en rojo y se añade en la base de datos
   asignaHora(hora:string){
 
-    this.mensaje='Ha elegido el día: '+ this.day+' a las: '+hora;
+    this.mensaje='Ha elegido el día: '+ this.day+' a las: '+hora+' para el cliente: '+this.cliente;
     let cambio=document.getElementById(hora);
     if(cambio&&cambio.style.color!='red'){
 this.modal();

@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { CalAdmin } from '../cal-admin/cal-admin';
+import { CalendarioAdmin } from '../calendario-admin/calendario-admin';
 
 
 @Component({
     selector: 'app-citas-admin',
-    imports: [CalAdmin],
+    imports: [CalendarioAdmin],
     templateUrl: './citas-admin.html',
     styleUrl: './citas-admin.css'
 })

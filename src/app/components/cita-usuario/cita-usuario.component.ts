@@ -10,10 +10,9 @@ import { Peticiones } from '../../services/peticiones';
     styleUrl: './cita-usuario.component.css'
 })
 export class CitaUsuarioComponent implements OnInit {
-  year: number = 0;
-  month: number = 0;
-  day: number = 0;
-  urlTree: UrlTree;
+  year = localStorage.getItem('year');
+  month= localStorage.getItem('mes');
+  day = localStorage.getItem('dia');
   respuesta: any = [];
   idUsuario:any='';
   token:any='';
@@ -21,10 +20,6 @@ export class CitaUsuarioComponent implements OnInit {
   frase: any = '';
   constructor(private router: Router, private conn: Peticiones) {
 
-    this.urlTree = this.router.parseUrl(this.router.url);
-    this.year = this.urlTree.queryParams['year'];
-    this.month = this.urlTree.queryParams['month'];
-    this.day = this.urlTree.queryParams['day'];
     this.idUsuario = localStorage.getItem('userId');
     if(localStorage.getItem('token')!=null){
       this.token=localStorage.getItem('token');

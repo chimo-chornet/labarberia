@@ -18,7 +18,7 @@ $(document).ready(function ()
 {
     $.ajax({
         type: 'GET',
-        url: 'http://localhost:3020/api/festivos/lista',
+        url: 'http://77.37.87.52:3020/api/festivos/lista',
         data: {
 
         },
@@ -153,10 +153,10 @@ function hacer(evento){
 
         if(evento.target.textContent.length<2){
 
-        window.location.href=("http://localhost:4200/citaAdmin/?year="+anActual+'&month='+mesActual+'&day=0'+evento.target.textContent+'&color='+this.color);
+        window.location.href=("http://www.labarberiademipadre.com:4220/citaAdmin/?year="+anActual+'&month='+mesActual+'&day=0'+evento.target.textContent+'&color='+this.color);
 
         }else{
-   window.location.href=("http://localhost:4200/citaAdmin/?year="+anActual+'&month='+mesActual+'&day='+evento.target.textContent+'&color='+this.color);
+   window.location.href=("http://www.labarberiademipadre.com:4220/citaAdmin/?year="+anActual+'&month='+mesActual+'&day='+evento.target.textContent+'&color='+this.color);
 
         }
 }

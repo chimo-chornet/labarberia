@@ -1,0 +1,69 @@
+
+
+
+<div class="general">
+
+
+  <div class="container col-md-6 col-sm-12">
+    <h1>Productos y Ofertas</h1>
+
+    <div id="productos" class="listado">
+      <table class="orange muestra">
+        <tr>
+          <th>Descripción</th>
+          <th>Eliminar</th>
+
+        </tr>
+        @for (product of recogido; track $index) {
+
+        <tr>
+
+          <td ><input id="oferta{{$index}}" type="text"  value={{product.description}} (change)="actualiza($index,product._id)"/> </td>
+          <td  class="eliminar" (click)="eliminaProducto(product._id,product.description)">x</td>
+
+        </tr>
+        }
+      </table>
+
+    </div>
+    <br>
+<h1>Añadir Oferta</h1>
+    <div action="">
+      <div>
+        <input type="text" [(ngModel)]="descripcion" id="descripcion" placeholder="Descripción de la oferta">
+      </div>
+      <br>
+      <div>
+        <button type="button" (click)="crear()" id="enviar">
+        Enviar datos: </button>
+        </div>
+      </div>
+<div>
+<button type="button"  (click)="salir()" style="background-color: brown;">Salir</button>
+</div>
+
+      <div>
+        <h1 class="error">{{tipo}}</h1>
+        <h2>{{msg}}</h2>
+      </div>
+      <div>
+      </div>
+    </div>
+
+  </div>
+<!-- The Modal -->
+<div class="container-fluid col-md-3">
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <h1>Eliminar oferta</h1>
+      <h2>{{mensajeModal}}</h2>
+      <button id="ok" class="botonModal verde">Aceptar</button>
+      <br>
+      <button class="botonModal rojo" id="cancela" (click)="cerrarModal()">cancelar</button>
+    </div>
+
+  </div>
+
+</div>

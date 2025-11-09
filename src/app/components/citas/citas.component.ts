@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { CalUsuarioComponent } from '../cal-usuario/cal-usuario.component';
+import { Calendariousuario } from "../calendario-usuario/calendario-usuario";
 
 
 @Component({
     selector: 'app-citas',
-    imports: [CalUsuarioComponent],
+    imports: [Calendariousuario],
     templateUrl: './citas.component.html',
     styleUrl: './citas.component.css'
 })

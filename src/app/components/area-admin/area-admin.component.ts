@@ -12,9 +12,10 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class AreaAdminComponent {
 recogido:any=[];
+ordenarPor:string='email';
   mensaje:string='';
   hoy:Date=new Date();
-  dia:string=""+(this.hoy.getDate()-1);
+  dia:string=""+(this.hoy.getDate());
   mes:string=""+(this.hoy.getMonth()+1);
   mensajeModal:string='';
 
@@ -25,7 +26,7 @@ recogido:any=[];
     this.token=localStorage.getItem('token');
   };
 
-listado(){
+listado(sort:string){
   let citas=document.getElementById('citas');
   if(citas!=null){
   citas.style.display='none';
@@ -34,7 +35,7 @@ listado(){
   if(usuario!=null){
   usuario.style.display='block'
   }
-this.conn.lista().subscribe((res:any)=>{
+this.conn.lista(sort).subscribe((res:any)=>{
     this.recogido=res.body;
     if(this.recogido.length>0){
       this.mensaje='Lista de usuarios'
@@ -136,7 +137,7 @@ this.conn.getCitas(dia).subscribe((res:any)=>{
       resultado.onclick=()=>{
       this.conn.borraUsuario(id).subscribe((res:any)=>{
         this.mensaje=res.msg;
-        this.conn.lista().subscribe((res:any)=>{
+        this.conn.lista('email').subscribe((res:any)=>{
         this.recogido=res.body;
             if(this.recogido.length>0){
               this.mensaje='Lista de usuarios'
@@ -149,6 +150,23 @@ this.conn.getCitas(dia).subscribe((res:any)=>{
     }
     }
   }
+orderMail(){
+  this.ordenarPor='email';
+  this.listado(this.ordenarPor);
+}
+orderName(){
+  this.ordenarPor='name';
+  this.listado(this.ordenarPor);
+
+}
+orderLastName(){
+  this.ordenarPor='lastName';
+  this.listado(this.ordenarPor);
+
+}
+
+
+
   //Hacemos visible la ventana modal
 modal() {
   let modal:any = document.getElementById("myModal");

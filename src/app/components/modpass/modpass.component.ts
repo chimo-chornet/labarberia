@@ -52,7 +52,12 @@ export class ModpassComponent {
         this.tipo = 'Error de contraseñas';
         this.msg =
           'el campo repetir contraseña debe ser igual a la nueva contraseña';
-      } else {
+      } else if(this.passnew==this.passactual){
+        this.tipo = 'Error de contraseñas';
+        this.msg =
+          'La nueva contraseña no puede ser igual que la antigua';
+
+      }else{
         this.conn
           .cambioPassword(this.mail, this.passnew)
           .subscribe((resp: any) => {

@@ -52,6 +52,9 @@
           "defaultConfiguration": "production"
         },
         "serve": {
+           "options":{
+              "port":4220
+            },
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
@@ -60,6 +63,7 @@
             "development": {
               "buildTarget": "labarberia:build:development"
             }
+
           },
           "defaultConfiguration": "development"
         },

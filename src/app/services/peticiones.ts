@@ -12,11 +12,11 @@ export class Peticiones {
   constructor(private chimo: DataService) {}
 
 
-public lista(){
+public lista(sort:string){
   var autorizacion=""+localStorage.getItem('token');
   const headers = { 'Authorization': autorizacion}
 
-  return  this.http.get('http://localhost:3020/api/user/lista',{headers});
+  return  this.http.get('https://srv1098627.hstgr.cloud/api/user/lista?order='+sort,{headers});
 }
 
 public getFestivos(){
@@ -24,7 +24,7 @@ public getFestivos(){
 
   const headers = { 'Authorization': autorizacion}
 
-  return  this.http.get('http://localhost:3020/api/festivos/lista',{headers});
+  return  this.http.get('https://srv1098627.hstgr.cloud/api/festivos/lista',{headers});
 }
 public setFestivos(fecha:string){
     const autorizacion = ""+localStorage.getItem('token');
@@ -34,13 +34,13 @@ public setFestivos(fecha:string){
       dia: fecha
     };
 
-  return  this.http.post('http://localhost:3020/api/festivos/register',body,{headers});
+  return  this.http.post('https://srv1098627.hstgr.cloud/api/festivos/register',body,{headers});
 }
 
 public borraFestivo(fecha: string) {
     const autorizacion = localStorage.getItem('token')+"";
     const headers={'Authorization':autorizacion}
-    let destino: string = 'http://localhost:3020/api/festivos/eliminar?dia=' + fecha;
+    let destino: string = 'https://srv1098627.hstgr.cloud/api/festivos/eliminar?dia=' + fecha;
     return this.http.delete(destino,{headers});
   }
 
@@ -51,7 +51,7 @@ public borraFestivo(fecha: string) {
       email: mail,
       password: pass,
     };
-    const toki = this.http.post('http://localhost:3020/api/user/login', body);
+    const toki = this.http.post('https://srv1098627.hstgr.cloud/api/user/login', body);
     this.tok = toki;
 
     return this.tok;
@@ -61,8 +61,44 @@ public borraFestivo(fecha: string) {
      const autorizacion = ""+localStorage.getItem('token');
 
  const headers = { 'Authorization': autorizacion}
-    return this.http.post('http://localhost:3020/api/user/register', bodey,{headers});
+    return this.http.post('https://srv1098627.hstgr.cloud/api/user/register', bodey,{headers});
   }
+
+   public nuevoProducto(bodey: any) {
+     const autorizacion = ""+localStorage.getItem('token');
+
+ const headers = { 'Authorization': autorizacion}
+    return this.http.post('https://srv1098627.hstgr.cloud/api/product/register', bodey,{headers});
+  }
+  public borraProducto(id: any) {
+    const autorizacion = localStorage.getItem('token')+"";
+    const headers={'Authorization':autorizacion}
+    let destino: string = 'https://srv1098627.hstgr.cloud/api/product/delete?id=' +id;
+    return this.http.delete(destino,{headers});
+  }
+  public ofertas(){
+  var autorizacion=""+localStorage.getItem('token');
+  const headers = { 'Authorization': autorizacion}
+
+  return  this.http.get('https://srv1098627.hstgr.cloud/api/product/lista',{headers});
+}
+
+public actualizaOferta(id:any, desc: string) {
+     const autorizacion = ""+localStorage.getItem('token');
+console.log(id+' '+desc);
+
+ const headers = { 'Authorization': autorizacion}
+    var body = {
+      _id:id,
+      description: desc
+    };
+    const toki = this.http.put('https://srv1098627.hstgr.cloud/api/product/actualiza',body,{headers});
+    this.tok = toki;
+
+    return this.tok;
+  }
+
+
 
   public cambioPassword(mail: string, nuevopassword: string) {
      const autorizacion = ""+localStorage.getItem('token');
@@ -72,7 +108,7 @@ public borraFestivo(fecha: string) {
       email: mail,
       passnuevo: nuevopassword,
     };
-    const toki = this.http.put('http://localhost:3020/api/user/actualiza',body,{headers});
+    const toki = this.http.put('https://srv1098627.hstgr.cloud/api/user/actualiza',body,{headers});
     this.tok = toki;
 
     return this.tok;
@@ -81,7 +117,7 @@ public borraFestivo(fecha: string) {
     const autorizacion = ""+localStorage.getItem('token');
 
  const headers = { 'Authorization': autorizacion}
-    let destino: string = 'http://localhost:3020/api/citas/dia?dia=' + dia;
+    let destino: string = 'https://srv1098627.hstgr.cloud/api/citas/dia?dia=' + dia;
     return this.http.get(destino,{headers});
   }
   public citasPendientes(dia: string) {
@@ -89,7 +125,7 @@ public borraFestivo(fecha: string) {
 
 
  const headers = { 'Authorization': autorizacion}
-    let destino: string = 'http://localhost:3020/api/citas/pendientes?dia=' + dia;
+    let destino: string = 'https://srv1098627.hstgr.cloud/api/citas/pendientes?dia=' + dia;
     return this.http.get(destino,{headers});
   }
   public getCitasUsuario(usuario: string) {
@@ -97,13 +133,13 @@ public borraFestivo(fecha: string) {
 
 
     const headers = { 'Authorization': autorizacion}
-    let destino: string = 'http://localhost:3020/api/citas/user?user=' + usuario;
+    let destino: string = 'https://srv1098627.hstgr.cloud/api/citas/user?user=' + usuario;
     return this.http.get(destino,{headers});
   }
 
 
-  public creaCita(dia: number, mes: number, year: number,hora:string,user:string){
-    let destino: string = 'http://localhost:3020/api/citas/register';
+  public creaCita(dia: any, mes: any, year: any,hora:string,user:string){
+    let destino: string = 'https://srv1098627.hstgr.cloud/api/citas/register';
     let cadena=year+'-'+mes+'-'+dia;
     let idUser:any=user;
     let body={
@@ -114,8 +150,8 @@ public borraFestivo(fecha: string) {
     return this.http.post(destino,body)
   }
 
-  public creaCitaAdmin(dia: number, mes: number, year: number,hora:string,user:string){
-    let destino: string = 'http://localhost:3020/api/citas/registerAdmin';
+  public creaCitaAdmin(dia: any, mes: any, year: any,hora:string,user:string){
+    let destino: string = 'https://srv1098627.hstgr.cloud/api/citas/registerAdmin';
     let cadena=year+'-'+mes+'-'+dia;
     let body={
       usuario:user,
@@ -129,14 +165,15 @@ public borraFestivo(fecha: string) {
 public borraCita(id: string) {
     const autorizacion = localStorage.getItem('token')+"";
     const headers={'Authorization':autorizacion}
-    let destino: string = 'http://localhost:3020/api/citas/eliminar?id=' + id;
+    let destino: string = 'https://srv1098627.hstgr.cloud/api/citas/eliminar?id=' + id;
     return this.http.delete(destino,{headers});
   }
 
   public borraUsuario(id: string) {
     const autorizacion = localStorage.getItem('token')+"";
     const headers={'Authorization':autorizacion}
-    let destino: string = "http://localhost:3020/api/usuarios/eliminar?id="+id;
+    let destino: string = "https://srv1098627.hstgr.cloud/api/usuarios/eliminar?id="+id;
     return this.http.delete(destino,{headers});
   }
+
 }

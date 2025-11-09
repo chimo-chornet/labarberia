@@ -1,4 +1,4 @@
-import { Routes } from '@angular/router';
+import { Routes,ActivatedRoute } from '@angular/router';
 import { AreaUsuarioComponent } from './components/area-usuario/area-usuario.component';
 import { HomeComponent } from './components/home/home.component';
 import { Login } from './components/login/login';
@@ -13,19 +13,23 @@ import { CitaDia } from './cita-dia/cita-dia';
 import { Pruebas } from './components/pruebas/pruebas';
 import { CitaAdmin } from './components/cita-admin/cita-admin';
 import { CitasAdminComponent } from './components/citas-admin/citas-admin';
+import { Producto } from './components/producto/producto';
 import { DialogOverviewExample } from './components/emergente/emergente';
+import { CalendarioAdmin } from './components/calendario-admin/calendario-admin';
+import { Calendariousuario } from './components/calendario-usuario/calendario-usuario';
 
 export const routes: Routes = [
     {path:'',component:HomeComponent},
     {path: 'usuarios',component:AreaUsuarioComponent},
     {path: 'home',component:HomeComponent},
     {path: 'login',component:Login},
-    {path: 'calusuario',component:CalUsuarioComponent},
+    {path: 'calendUsuario',component:Calendariousuario},
     {path: 'modpass',component:ModpassComponent},
     {path: 'citas',component:CitasComponent},
     {path: 'citaUsuario',component:CitaUsuarioComponent},
     {path: 'citaAdmin',component:CitaAdmin},
     {path: 'citasAdmin',component:CitasAdminComponent},
+      {path: 'calendAdmin',component:CalendarioAdmin},
 
 
 {path: 'emergente',component:DialogOverviewExample},
@@ -33,6 +37,8 @@ export const routes: Routes = [
     {path: 'usuario',component:UsuarioComponent},
     {path: 'admin',component:AreaAdminComponent},
     {path: 'citas/dia',component:CitaDia},
+    {path: 'producto',component:Producto},
+
     {path: 'pruebas',component:Pruebas}
 
 
