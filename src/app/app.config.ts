@@ -12,6 +12,4 @@ export const appConfig: ApplicationConfig = {
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes,withHashLocation()),// withHashLocation() para que recargue páginas con ruta #
     provideHttpClient(withFetch())]
-
-
 };

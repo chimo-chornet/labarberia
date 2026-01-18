@@ -45,6 +45,14 @@ export class CitaAdmin implements OnInit {
   }
 //Al inicio comprobamos si es festivo y recogemos las horas reservadas para marcarlas en rojo
   ngOnInit(): void {
+    this.token=localStorage.getItem('token');
+  var bearer=0;
+  if (this.token!=null){
+    bearer=this.token.length;
+}
+if(bearer<=10){
+  this.router.navigate(['/login']);
+}else{
 this.dia=this.year + '-' + this.month + '-' + this.day;
     let comienzo=document.getElementById('comienzo')
     if(comienzo!=null){
@@ -66,7 +74,7 @@ this.respuesta.forEach((element:any) => {
       });
 
 
-
+    }
 
   }
   //marca el día como festivo y lo muestra en rojo

@@ -21,7 +21,10 @@ export class AreaUsuarioComponent {
 ngOnInit(){
   this.token=localStorage.getItem('token');
   this.idUsuario=localStorage.getItem('userId');
-  const bearer=this.token.length;
+  var bearer=0;
+  if (this.token!=null){
+    bearer=this.token.length;
+}
 if(bearer<=10){
   this.router.navigate(['/login']);
 }else{
@@ -35,7 +38,9 @@ setTimeout(()=>{
 }
 
 citasPendientesUsuario(){
-
+if(this.token==null){
+  this.router.navigate(['/login']);
+}
   this.conn.getCitasUsuario(this.idUsuario).subscribe((res:any)=>{
   this.idUsuario=localStorage.getItem('userId');
 

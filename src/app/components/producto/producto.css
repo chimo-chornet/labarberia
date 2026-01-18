@@ -78,7 +78,7 @@ font-size: large;
 }
 .listado td{
     font-size: 2vh;
-    line-height:150%;
+    line-height:100%;
     text-align: left;
    padding-left: 10px;
 }

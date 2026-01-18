@@ -18,7 +18,7 @@ export class Login {
   msg: string = '';
   errores: string = '';
   idUsuario:number=0;
-  credenciales:number=0;
+  credenciales:string='';
 
 
   recogidos: any = [];
@@ -53,12 +53,14 @@ export class Login {
         this.idUsuario=this.recogidos.idUsario;
         localStorage.setItem('userId',this.recogidos.idUsuario);
         this.credenciales=resp.credential;
+        var cred:number=parseInt(this.credenciales)+347
+        localStorage.setItem('cre',""+cred);
         localStorage.setItem('token',this.tokenRecibido);
         if(this.tokenRecibido=='nada'){
         console.log('no hay');
 
       }else{
-        if(this.credenciales>125){
+        if(parseInt(this.credenciales)>125){
       this.router.navigate(['/admin']);
         }else{
       this.router.navigate(['/usuarios']);

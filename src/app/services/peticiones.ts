@@ -46,7 +46,19 @@ public borraFestivo(fecha: string) {
 
 
 
-  public getToken(mail: string, pass: string) {
+  public getUsuario(mail: string) {
+     const autorizacion = localStorage.getItem('token')+"";
+    const headers={'Authorization':autorizacion}
+    var body = {
+      id: localStorage.getItem('userId'),
+
+    };
+    const usu = ('https://srv1098627.hstgr.cloud/api/user/user?id='+localStorage.getItem('userId'));
+
+
+    return this.http.get(usu,{headers});
+  }
+   public getToken(mail: string, pass: string) {
     var body = {
       email: mail,
       password: pass,
@@ -56,6 +68,7 @@ public borraFestivo(fecha: string) {
 
     return this.tok;
   }
+
 
   public nuevoUsuario(bodey: any) {
      const autorizacion = ""+localStorage.getItem('token');

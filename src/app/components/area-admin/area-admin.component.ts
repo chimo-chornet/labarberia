@@ -18,12 +18,14 @@ ordenarPor:string='email';
   dia:string=""+(this.hoy.getDate());
   mes:string=""+(this.hoy.getMonth()+1);
   mensajeModal:string='';
+  id:any="";
 
 
  fecha:string =""+this.hoy.getFullYear()+"-"+(this.hoy.getMonth()+1)+"-"+this.dia;
   token:any='';
   constructor(private router:Router,private dat:DataService,private conn:Peticiones){
     this.token=localStorage.getItem('token');
+     this.id=localStorage.getItem('userId');
   };
 
 listado(sort:string){
@@ -45,6 +47,17 @@ this.conn.lista(sort).subscribe((res:any)=>{
 }
 }
 ngOnInit(){
+  var cred=localStorage.getItem('cre');
+  var credenciales=parseInt(""+cred)-347;
+  if (credenciales<125){
+    this.router.navigate(['/login']);
+    localStorage.setItem('token','');
+    localStorage.setItem('userId','');
+    localStorage.setItem('cre','');
+
+
+  }
+
   if(this.dia.length<2){
    this.dia="0"+this.dia;
   }
